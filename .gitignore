@@ -1,0 +1,6 @@
+*.sh
+*.yml
+*.txt
+.DS_Store
+computer-client.rb
+

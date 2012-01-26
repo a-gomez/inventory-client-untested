@@ -1,0 +1,2 @@
+inventory.rb : queries local macintosh hardware and updates inventory server regarding computer's status
+return.rb : unregisters the macintosh computer and releases the current user 
