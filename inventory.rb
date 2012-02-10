@@ -10,7 +10,8 @@ count = 0
 # AND on the regular cron trigger 
 #     this script ensures inventory hw specs is up-to-date
 
-host_ip   = '-i -k https://10.164.64.57'
+host_ip   = '-i -k https://inventory.las.ch'
+#host_ip   = '-i -k https://10.164.64.57'
 #host_ip   = '-i --url http://10.164.64.57'
 #host_ip    = '-i --url http://127.0.0.1:4567'
 #host_ip    = '-i http://127.0.0.1:4567'
@@ -130,7 +131,7 @@ elsif !( File::exists?("first_user.txt") )
    results_hash["issued_to"] = results_hash.fetch("last_user")
    results_hash["last_user"] = "first-login"
    results_hash["issued_on"] = Time.now.to_s    
-   results_hash["status"] = "Registered"  
+   results_hash["status"] = "Deployed"  
 	    
    f = File.new("db-issued-to.sh", "w")
        f.print "curl #{host_ip}/computers/#{results_hash.fetch("macid0")} -u #{usrname}:#{passwd} -X PUT"
